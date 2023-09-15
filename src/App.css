@@ -21,8 +21,8 @@ h1 {
 .game-board-table {
   background-color: black;
   box-shadow: 0px 0px 15px white;
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
