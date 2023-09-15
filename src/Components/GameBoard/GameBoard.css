@@ -1,0 +1,20 @@
+.game-board {
+    margin: 10px auto;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 210px;
+    height: 210px;
+    font-size: 36px;
+    border-collapse: collapse;
+  }
+  
+.game-board tr > td:nth-of-type(2) {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.game-board tr:nth-of-type(2) {
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
