@@ -9,10 +9,9 @@ function App() {
   const [message, setMessage] = useState(`First player is X`);
   const [stepNumber, setStepNumber] = useState(0);
   const [board, setBoard] =  useState(setInitialStateOfGameBoard); 
-  
   const [gameState, setGameState] = useState({x : 0, o: 0, push: 0, round: 1});
   const addRemovePointerClassFromNewRoundButton = useRef(null);
-  let firstPlayer = "X";
+  const [firstPlayer, setFirstPlayer] = useState("X");
 
   function setInitialStateOfGameBoard() {
     let temp = [];
@@ -31,15 +30,15 @@ function App() {
   
   const newGameOrRound = () => {
     addRemovePointerClassFromNewRoundButton.current.classList.remove('pointer');
-    if (firstPlayer === "X" ) setMessage("First player is X");
-    else setMessage("First player is O");
+    if (firstPlayer === "X" ) setMessage("First player is O");
+    else setMessage("First player is X");
     setIsWinner(false);
     setStepNumber(0);
     setBoard(setInitialStateOfGameBoard);
   };
   
   function handleNewGame () {
-    firstPlayer = "X";
+    setFirstPlayer("X");
     setNextPlayer("X");
     newGameOrRound();
     setGameState({x : 0, o: 0, push: 0, round: 1})
@@ -48,10 +47,10 @@ function App() {
 
   const handleNewRound = () => {
     if (firstPlayer === "X") {
-      firstPlayer = "O"
+      setFirstPlayer("O");
       setNextPlayer("O");
     } else {
-      firstPlayer = "X"
+      setFirstPlayer("X");
       setNextPlayer("X");
     }
     newGameOrRound();
